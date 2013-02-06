@@ -62,7 +62,7 @@ public class DefaultConnectionFactory extends SpyObject implements
   /**
    * Default client mode.
    */
-  public static final ClientMode DEFAULT_CLIENT_MODE = ClientMode.Dynamic;
+  public static final ClientMode DEFAULT_CLIENT_MODE = ClientMode.Static;
   
   /**
    * Default failure mode.
@@ -143,7 +143,7 @@ public class DefaultConnectionFactory extends SpyObject implements
    * length, and the given read buffer size.
    */
   public DefaultConnectionFactory(int qLen, int bufSize) {
-    this(ClientMode.Dynamic, qLen, bufSize, DEFAULT_HASH);
+    this(DEFAULT_CLIENT_MODE, qLen, bufSize, DEFAULT_HASH);
   }
 
   /**
