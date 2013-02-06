@@ -1,3 +1,7 @@
+# Why does this fork exist?
+
+The Amazon AWS fork defaults to ClientMode.Dynamic, which breaks drop-in replacement while still supporting regular memcached nodes (either raw ElastiCache nodes, or honest-to-goodness memcached). That conflicts with how a project I'm working on is set up, so I'm changing the default to ClientMode.Static. I'm also fixing what looks like a bug where it ignores the default mode constant and hard-codes ClientMode.Dynamic in an alternate constructor.
+
 # Amazon ElastiCache Cluster Client
 
 Amazon ElastiCache Cluster Client is an enhanced Java library to connect to ElastiCache clusters. This client library has been built upon Spymemcached and is released under the [Amazon Software License](http://aws.amazon.com/asl/).
